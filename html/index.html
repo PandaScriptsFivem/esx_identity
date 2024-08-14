@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+        <link href="css/style.css" rel="stylesheet" />
+        <meta charset="utf-8">
+        <title>ESX Identity</title>
+    </head>
+
+    <body class="none" onkeydown="TriggeredKey(this)">
+        <img src="logo/logo.png" class="logo">
+        <div class="dialog">
+            <div class="title"><b>Karakter Regisztráció</b></div>
+            <form id="register" name="register" action="#">
+                <div style="color: white; font-size: 12px; font-family: 'Gill Sans', sans-serif">Keresztnév</div>
+                <input id="firstname" type="text" class="placeholderasd" name="firstname" placeholder="János" minlength="3" maxlength="12" pattern="[a-zA-Z]*" /><br />
+                <div style="color: white; font-size: 12px; font-family: 'Gill Sans', sans-serif">Vezetéknév</div>
+                <input id="lastname" type="text" class="placeholderasd" name="lastname" placeholder="Tóth" minlength="3" maxlength="12" pattern="[a-zA-Z]*" /><br />
+                <div style="color: white; font-size: 12px; font-family: 'Gill Sans', sans-serif">Születési idő (Hónap/Nap/Év)</div>
+                <input id="dateofbirth" type="date" name="dateofbirth" class="" min="1900-01-01" max="2010-01-01" onfocus="(this.type='date')" /><br />
+                <div style="color: white; font-size: 12px; font-family: 'Gill Sans', sans-serif">Magasság</div>
+                <input id="height" type="number" class="placeholderasd" name="height" min="120" max="220" placeholder="Magasság (cm)" /><br />
+                <center>
+                    <div class="radio-toolbar">
+                        <input type="radio" id="radiom" name="sex" value="m" checked />
+                        <label for="radiom">Férfi</label>
+
+                        <input type="radio" id="radiof" name="sex" value="f" />
+                        <label for="radiof">Nő</label>
+                    </div>
+                </center>
+                <button class="createbtn" id="submit" type="submit">
+                    <font size="4px" class="asd">Készítés</font>
+                </button>
+            </form>
+            <button class="gombok"type="submit" onclick="discord()">
+                <font size="4px" class="asd">Discord</font>
+            </button>
+        </div>
+        
+
+        <script>
+            function TriggeredKey(e) {
+                var keycode;
+                if (window.event) keycode = window.event.keyCode;
+                if (window.event.keyCode === 13 || window.event.keyCode === 27) return false;
+            }
+        </script>
+        <script src="js/script.js" defer></script>
+        <script src="../config.js"></script>
+    </body>
+</html>
